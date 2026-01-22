@@ -1,11 +1,11 @@
 # ShiftFlow
 
-A web-based staff scheduling and workforce management application designed for businesses to manage employee shifts, track labor costs, and ensure compliance with Greek labor laws.
+Staff scheduling and workforce management application for hospitality businesses. Built with Next.js and designed for Greek labor law compliance.
 
 ## Features
 
 ### Schedule Management
-- Weekly schedule grid view with drag-and-drop functionality
+- Weekly schedule grid with drag-and-drop functionality
 - Add, edit, and delete shifts via modal dialogs
 - Support for multiple roles: Waiter, Barista, Kitchen, Cashier, Manager
 - Week navigation with quick access to current week
@@ -19,36 +19,66 @@ A web-based staff scheduling and workforce management application designed for b
 ### Cost Analysis
 - Real-time labor cost calculations
 - Overtime tracking (1.5x multiplier)
-- Weekly and monthly cost breakdowns
+- Weekly cost breakdowns
 - Per-employee cost analysis
 
 ### Labor Law Compliance
-- Automatic alerts for:
-  - Weekly hours exceeding employee limits
-  - EU directive 48-hour weekly limit violations
-  - Insufficient rest periods (minimum 11 hours between shifts)
-  - Shifts longer than 10 hours
-  - Sunday work (75% wage increase requirement)
+Automatic alerts for Greek/EU regulations:
+- Weekly hours exceeding employee limits
+- EU directive 48-hour weekly limit violations
+- Insufficient rest periods (minimum 11 hours between shifts)
+- Shifts longer than 10 hours
+- Sunday work (75% wage increase requirement)
 
 ### ERGANI Export
 - CSV export for Greek labor authority (ERGANI) compliance
 
 ## Tech Stack
 
-- **Frontend:** Vanilla JavaScript (ES6+), HTML5, CSS3
-- **Storage:** Browser LocalStorage
-- **UI:** Custom dark theme with CSS variables
+- **Framework**: Next.js 14 (App Router)
+- **UI**: React 18 + Tailwind CSS
+- **Data**: JSON file storage
+- **Language**: Greek (Ελληνικά)
 
 ## Getting Started
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/exas-3/scheduleapp.git
-   ```
+```bash
+# Install dependencies
+npm install
 
-2. Open `index.html` in your browser
+# Run development server
+npm run dev
 
-No build process or dependencies required.
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Project Structure
+
+```
+├── app/
+│   ├── api/              # API routes
+│   │   ├── employees/    # Employee CRUD
+│   │   └── shifts/       # Shift CRUD
+│   ├── layout.jsx        # Root layout
+│   ├── page.jsx          # Main page
+│   └── globals.css       # Global styles
+├── components/
+│   ├── schedule/         # Schedule grid components
+│   ├── employees/        # Employee management
+│   ├── costs/            # Cost analysis view
+│   ├── alerts/           # Compliance alerts
+│   └── ui/               # Reusable UI components
+├── lib/
+│   ├── db.js             # Data storage layer
+│   └── helpers.js        # Utility functions
+└── data/                 # JSON data files (auto-generated)
+```
 
 ## Usage
 
@@ -58,12 +88,6 @@ The application comes preloaded with demo data including 6 sample employees and 
 - **Προσωπικό** (Staff) - Manage employees
 - **Κόστος** (Cost) - View labor cost analysis
 - **Ειδοποιήσεις** (Alerts) - Check compliance warnings
-
-## Notes
-
-- UI language: Greek
-- Data persists in browser LocalStorage
-- No backend required - runs entirely client-side
 
 ## License
 
